@@ -39,6 +39,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f0xx_hal.h"
+#include <stdbool.h>
 
 /* USER CODE BEGIN Includes */
 #include "stm32f0xx_hal_adc_ex.h"
@@ -54,6 +55,10 @@ float vdd  = 0;
 float vbat = 0;
 uint8_t guard0 = 0;
 uint8_t guard1 = 0;
+
+#define CLOSED_CYCLES_MAX 2 // How many cycles keep LOAD enabled.
+uint8_t closed_cycles __attribute__ ((section (".noinit")));
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -276,8 +281,6 @@ int main(void)
   MX_ADC_Init();
   /* USER CODE BEGIN 2 */
 
-  //HAL_GPIO_WritePin(MEAS_GPIO_Port, MEAS_Pin, GPIO_PIN_SET);
-  //HAL_Delay(1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -289,8 +292,13 @@ int main(void)
 
   if ((guard0 != 0) || (guard1 != 0) || (vbat < 3.3f))
   {
-    // Flood detected or battery is low, enable LOAD
-    HAL_GPIO_WritePin(LOAD_GPIO_Port, LOAD_Pin, GPIO_PIN_SET);
+    // Enable load only for the specified number of cycles
+    if (closed_cycles < CLOSED_CYCLES_MAX)
+    {
+        closed_cycles++;
+        // Flood detected or battery is low, enable LOAD
+        HAL_GPIO_WritePin(LOAD_GPIO_Port, LOAD_Pin, GPIO_PIN_SET);
+    }
     if ((guard0 != 0) && (guard1 == 0))
     {
       setLeds(0x0); // GUARD0 error
@@ -316,40 +324,42 @@ int main(void)
   }
   else
   {
-    if (vbat < 3.4)
+    // Clear if everything is OK
+    closed_cycles = 0;
+    if (vbat < 3.4f)
     {
       setLeds(0x1);
       HAL_GPIO_WritePin(BUZ_EN_GPIO_Port, BUZ_EN_Pin, GPIO_PIN_RESET);
     }
-    else if (vbat < 3.5)
+    else if (vbat < 3.5f)
     {
       setLeds(0x2);
     }
-    else if (vbat < 3.6)
+    else if (vbat < 3.6f)
     {
       setLeds(0x3);
     }
-    else if (vbat < 3.7)
+    else if (vbat < 3.7f)
     {
       setLeds(0x4);
     }
-    else if (vbat < 3.8)
+    else if (vbat < 3.8f)
     {
       setLeds(0x5);
     }
-    else if (vbat < 3.9)
+    else if (vbat < 3.9f)
     {
       setLeds(0x6);
     }
-    else if (vbat < 4.0)
+    else if (vbat < 4.0f)
     {
       setLeds(0x7);
     }
-    else if (vbat < 4.1)
+    else if (vbat < 4.1f)
     {
       setLeds(0x8);
     }
-    else if (vbat < 4.2)
+    else if (vbat < 4.2f)
     {
       setLeds(0x9);
     }

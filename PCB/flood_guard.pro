@@ -1,4 +1,4 @@
-update=19.02.2018 14:05:19
+update=17.08.2018 21:40:58
 version=1
 last_client=kicad
 [pcbnew]
@@ -27,14 +27,4 @@ NetIExt=net
 version=1
 [eeschema]
 version=1
-LibDir=D:/KiCAD_libs
-[eeschema/libraries]
-LibName1=flood_guard-rescue
-LibName2=stm32f0xx
-LibName3=transistors
-LibName4=discrete
-LibName5=power
-LibName6=regulators
-LibName7=connectors
-LibName8=logic
-LibName9=LOGO
+LibDir=

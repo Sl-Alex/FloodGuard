@@ -1,15 +1,5 @@
-EESchema Schematic File Version 2
-LIBS:flood_guard-rescue
-LIBS:stm32f0xx
-LIBS:transistors
-LIBS:discrete
-LIBS:power
-LIBS:regulators
-LIBS:connectors
-LIBS:logic
-LIBS:LOGO
-LIBS:flood_guard-cache
-EELAYER 25 0
+EESchema Schematic File Version 4
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -24,7 +14,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L STM32F030F4P6 U5
+L stm32f0xx:STM32F030F4P6 U5
 U 1 1 59F6D808
 P 4750 2250
 F 0 "U5" H 4950 2500 60  0000 C CNN
@@ -35,7 +25,7 @@ F 3 "" H 4750 2250 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L MOSFET_N_DGS VT2
+L transistors:MOSFET_N_DGS VT2
 U 1 1 59F6EC3F
 P 8450 3600
 F 0 "VT2" H 8550 3900 60  0000 C CNN
@@ -46,7 +36,7 @@ F 3 "" H 8450 3700 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L MOSFET_P_DGS VT7
+L transistors:MOSFET_P_DGS VT7
 U 1 1 59F6EC90
 P 8750 3200
 F 0 "VT7" H 8850 3100 60  0000 C CNN
@@ -57,7 +47,7 @@ F 3 "" H 8750 3300 60  0000 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L resistor R12
+L discrete:resistor R12
 U 1 1 59F6ED18
 P 8100 3600
 F 0 "R12" H 8300 3700 60  0000 C CNN
@@ -68,7 +58,7 @@ F 3 "" H 8100 3600 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L capacitor C8
+L discrete:capacitor C8
 U 1 1 59F6ED69
 P 9350 3100
 F 0 "C8" V 9650 2900 60  0000 C CNN
@@ -79,7 +69,7 @@ F 3 "" H 9350 3100 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L resistor R20
+L discrete:resistor R20
 U 1 1 59F6ED97
 P 9150 3650
 F 0 "R20" V 9400 3500 60  0000 C CNN
@@ -90,7 +80,7 @@ F 3 "" H 9150 3650 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L resistor R14
+L discrete:resistor R14
 U 1 1 59F6EDDD
 P 8650 3100
 F 0 "R14" V 8900 2950 60  0000 C CNN
@@ -101,7 +91,7 @@ F 3 "" H 8650 3100 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L resistor R19
+L discrete:resistor R19
 U 1 1 59F6EE0E
 P 9150 3100
 F 0 "R19" V 9500 3000 60  0000 C CNN
@@ -112,7 +102,7 @@ F 3 "" H 9150 3100 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR31
+L power1:GND #PWR31
 U 1 1 59F6F5DE
 P 8650 3700
 F 0 "#PWR31" H 8650 3550 50  0001 C CNN
@@ -123,7 +113,7 @@ F 3 "" H 8650 3700 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8650 3100 8650 3300
+	8650 3100 8650 3200
 Wire Wire Line
 	8650 3200 8750 3200
 Connection ~ 8650 3200
@@ -134,20 +124,20 @@ Wire Wire Line
 Wire Wire Line
 	9150 3750 9150 3650
 Wire Wire Line
-	9150 3100 9150 3300
+	9150 3100 9150 3200
 Wire Wire Line
-	9150 3200 9650 3200
+	9150 3200 9350 3200
 Wire Wire Line
 	9350 3200 9350 3100
 Connection ~ 9150 3200
 Wire Wire Line
 	8650 2750 8650 2650
 Wire Wire Line
-	8350 2650 8950 2650
+	8350 2650 8650 2650
 Wire Wire Line
 	8950 2650 8950 3100
 $Comp
-L GND #PWR35
+L power1:GND #PWR35
 U 1 1 59F6F90B
 P 9150 2700
 F 0 "#PWR35" H 9150 2550 50  0001 C CNN
@@ -158,7 +148,7 @@ F 3 "" H 9150 2700 60  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR36
+L power1:GND #PWR36
 U 1 1 59F6F92E
 P 9350 2700
 F 0 "#PWR36" H 9350 2550 50  0001 C CNN
@@ -173,7 +163,7 @@ Wire Wire Line
 Wire Wire Line
 	9350 2800 9350 2700
 $Comp
-L NCP551 U2
+L regulators:NCP551 U2
 U 1 1 59F6E72F
 P 2400 2200
 F 0 "U2" H 2550 2350 60  0000 C CNN
@@ -184,7 +174,7 @@ F 3 "" H 2400 2200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L STC4054 U4
+L regulators:STC4054 U4
 U 1 1 59F6E7E2
 P 2600 1250
 F 0 "U4" H 2750 1400 60  0000 C CNN
@@ -195,7 +185,7 @@ F 3 "" H 2600 1250 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L capacitor C4
+L discrete:capacitor C4
 U 1 1 59F6E94D
 P 1950 2550
 F 0 "C4" V 2200 2450 60  0000 C CNN
@@ -206,7 +196,7 @@ F 3 "" H 1950 2550 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L capacitor C5
+L discrete:capacitor C5
 U 1 1 59F6EAE2
 P 3500 2550
 F 0 "C5" V 3750 2450 60  0000 C CNN
@@ -217,7 +207,7 @@ F 3 "" H 3500 2550 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L resistor R4
+L discrete:resistor R4
 U 1 1 59F6EBA4
 P 2200 1450
 F 0 "R4" H 2350 1550 60  0000 C CNN
@@ -228,7 +218,7 @@ F 3 "" H 2200 1450 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L capacitor C3
+L discrete:capacitor C3
 U 1 1 59F6ECA6
 P 1900 1650
 F 0 "C3" V 2150 1550 60  0000 C CNN
@@ -239,7 +229,7 @@ F 3 "" H 1900 1650 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR11
+L power1:GND #PWR11
 U 1 1 59F6EE66
 P 2500 1700
 F 0 "#PWR11" H 2500 1550 50  0001 C CNN
@@ -250,7 +240,7 @@ F 3 "" H 2500 1700 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR9
+L power1:GND #PWR9
 U 1 1 59F6F01D
 P 2100 1700
 F 0 "#PWR9" H 2100 1550 50  0001 C CNN
@@ -261,7 +251,7 @@ F 3 "" H 2100 1700 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR7
+L power1:GND #PWR7
 U 1 1 59F6F052
 P 1900 1700
 F 0 "#PWR7" H 1900 1550 50  0001 C CNN
@@ -284,11 +274,11 @@ Wire Wire Line
 Wire Wire Line
 	2500 1650 2500 1700
 Wire Wire Line
-	1450 1250 2600 1250
+	1450 1250 1900 1250
 Wire Wire Line
 	1900 1250 1900 1350
 $Comp
-L GND #PWR10
+L power1:GND #PWR10
 U 1 1 59F6F1CC
 P 2300 2450
 F 0 "#PWR10" H 2300 2300 50  0001 C CNN
@@ -303,7 +293,7 @@ Wire Wire Line
 Wire Wire Line
 	2300 2400 2300 2450
 Wire Wire Line
-	1950 2200 2400 2200
+	1950 2200 2150 2200
 Wire Wire Line
 	2150 2200 2150 2600
 Wire Wire Line
@@ -313,7 +303,7 @@ Wire Wire Line
 Wire Wire Line
 	3300 2400 3200 2400
 $Comp
-L GND #PWR13
+L power1:GND #PWR13
 U 1 1 59F6F29E
 P 3500 2550
 F 0 "#PWR13" H 3500 2400 50  0001 C CNN
@@ -324,7 +314,7 @@ F 3 "" H 3500 2550 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR8
+L power1:GND #PWR8
 U 1 1 59F6F31A
 P 1950 2550
 F 0 "#PWR8" H 1950 2400 50  0001 C CNN
@@ -337,14 +327,14 @@ $EndComp
 Wire Wire Line
 	3500 2250 3500 2200
 Wire Wire Line
-	3200 2200 3600 2200
+	3200 2200 3500 2200
 Wire Wire Line
-	1950 1850 1950 2250
+	1950 1850 1950 2200
 Connection ~ 2150 2200
 Text Notes 1750 1000 0    118  Italic 0
 Charger and power supply
 $Comp
-L 3V3 #PWR14
+L power1:3V3 #PWR14
 U 1 1 59F6F88E
 P 3600 2200
 F 0 "#PWR14" H 3600 2050 50  0001 C CNN
@@ -356,16 +346,16 @@ F 3 "" H 3600 2200 60  0000 C CNN
 $EndComp
 Connection ~ 3500 2200
 Wire Wire Line
-	3400 1250 3950 1250
+	3400 1250 3500 1250
 Wire Wire Line
 	3500 1250 3500 1850
 Wire Wire Line
-	1950 1850 3600 1850
+	1950 1850 3500 1850
 Connection ~ 1950 2200
 Text Label 3550 1250 0    60   ~ 0
 VBAT
 $Comp
-L PLS1 X4
+L connectors:PLS1 X4
 U 1 1 59F6FBBF
 P 4050 1250
 F 0 "X4" H 4250 1350 60  0000 C CNN
@@ -376,7 +366,7 @@ F 3 "" H 4050 1250 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PLS1 X5
+L connectors:PLS1 X5
 U 1 1 59F6FC4B
 P 4050 1450
 F 0 "X5" H 4250 1550 60  0000 C CNN
@@ -387,7 +377,7 @@ F 3 "" H 4050 1450 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR15
+L power1:GND #PWR15
 U 1 1 59F6FC99
 P 3700 1450
 F 0 "#PWR15" H 3700 1300 50  0001 C CNN
@@ -401,7 +391,7 @@ Connection ~ 3500 1250
 Wire Wire Line
 	3700 1450 3950 1450
 $Comp
-L NE555 U3
+L logic:NE555 U3
 U 1 1 59F6F897
 P 2500 4650
 F 0 "U3" H 3150 4750 60  0000 C CNN
@@ -412,7 +402,7 @@ F 3 "" H 2500 4650 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L capacitor C1
+L discrete:capacitor C1
 U 1 1 59F6FC90
 P 1200 5550
 F 0 "C1" V 1450 5450 60  0000 C CNN
@@ -423,7 +413,7 @@ F 3 "" H 1200 5550 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L capacitor C2
+L discrete:capacitor C2
 U 1 1 59F6FD50
 P 1600 5550
 F 0 "C2" V 1850 5450 60  0000 C CNN
@@ -434,7 +424,7 @@ F 3 "" H 1600 5550 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L resistor R3
+L discrete:resistor R3
 U 1 1 59F6FDED
 P 1200 4800
 F 0 "R3" V 1400 4650 60  0000 C CNN
@@ -445,7 +435,7 @@ F 3 "" H 1200 4800 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L resistor R2
+L discrete:resistor R2
 U 1 1 59F70017
 P 1200 4350
 F 0 "R2" V 1400 4200 60  0000 C CNN
@@ -462,11 +452,11 @@ Wire Wire Line
 Wire Wire Line
 	2600 5050 1500 5050
 Wire Wire Line
-	1500 5050 1500 3950
+	1500 5050 1500 4650
 Wire Wire Line
 	1500 4650 1700 4650
 $Comp
-L GND #PWR2
+L power1:GND #PWR2
 U 1 1 59F70460
 P 1200 5550
 F 0 "#PWR2" H 1200 5400 50  0001 C CNN
@@ -477,7 +467,7 @@ F 3 "" H 1200 5550 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR6
+L power1:GND #PWR6
 U 1 1 59F70552
 P 1600 5550
 F 0 "#PWR6" H 1600 5400 50  0001 C CNN
@@ -488,11 +478,11 @@ F 3 "" H 1600 5550 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1200 4350 1200 4450
+	1200 4350 1200 4400
 Wire Wire Line
 	1200 4850 1700 4850
 Wire Wire Line
-	1200 4800 1200 5250
+	1200 4800 1200 4850
 Connection ~ 1200 4850
 Wire Wire Line
 	1200 4400 1600 4400
@@ -511,7 +501,7 @@ Wire Wire Line
 	1200 3950 1200 4000
 Connection ~ 1500 4650
 $Comp
-L GND #PWR12
+L power1:GND #PWR12
 U 1 1 59F70A33
 P 2500 4650
 F 0 "#PWR12" H 2500 4500 50  0001 C CNN
@@ -531,7 +521,7 @@ Connection ~ 1200 5150
 Text Notes 1600 4250 0    118  Italic 0
 Buzzer driver
 $Comp
-L MOSFET_P_DGS VT8
+L transistors:MOSFET_P_DGS VT8
 U 1 1 59F70202
 P 8850 4500
 F 0 "VT8" V 9150 4750 60  0000 C CNN
@@ -542,7 +532,7 @@ F 3 "" H 8850 4600 60  0000 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L MOSFET_P_DGS VT6
+L transistors:MOSFET_P_DGS VT6
 U 1 1 59F7029E
 P 8650 4200
 F 0 "VT6" V 8950 4450 60  0000 C CNN
@@ -553,7 +543,7 @@ F 3 "" H 8650 4300 60  0000 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L resistor R15
+L discrete:resistor R15
 U 1 1 59F70507
 P 8650 4500
 F 0 "R15" V 8800 4350 60  0000 C CNN
@@ -564,7 +554,7 @@ F 3 "" H 8650 4500 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L resistor R16
+L discrete:resistor R16
 U 1 1 59F70619
 P 8850 4500
 F 0 "R16" V 9000 4650 60  0000 C CNN
@@ -579,21 +569,21 @@ Wire Wire Line
 Wire Wire Line
 	8750 4300 8450 4300
 Wire Wire Line
-	8450 4000 8450 4500
+	8450 4000 8450 4300
 Wire Wire Line
-	8150 4000 8550 4000
+	8150 4000 8450 4000
 Wire Wire Line
-	8950 4000 9550 4000
+	8950 4000 9250 4000
 Wire Wire Line
 	9250 4300 9150 4300
 Wire Wire Line
-	8650 4850 8650 5050
+	8650 4850 8650 4950
 Wire Wire Line
-	8450 4950 8850 4950
+	8450 4950 8650 4950
 Wire Wire Line
 	8850 4950 8850 4850
 $Comp
-L MOSFET_N_DGS VT3
+L transistors:MOSFET_N_DGS VT3
 U 1 1 59F703D3
 P 8450 5350
 F 0 "VT3" H 8800 5600 60  0000 C CNN
@@ -604,7 +594,7 @@ F 3 "" H 8450 5450 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR32
+L power1:GND #PWR32
 U 1 1 59F70557
 P 8650 5450
 F 0 "#PWR32" H 8650 5300 50  0001 C CNN
@@ -615,7 +605,7 @@ F 3 "" H 8650 5450 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L resistor R13
+L discrete:resistor R13
 U 1 1 59F705B0
 P 8350 5800
 F 0 "R13" H 8550 5900 60  0000 C CNN
@@ -639,31 +629,31 @@ VADC
 Text Label 9550 4000 2    60   ~ 0
 VOUT
 Wire Wire Line
-	7900 3600 8100 3600
+	7900 3600 8000 3600
 Wire Wire Line
-	8000 2100 8000 3600
+	8000 2100 8000 2300
 Wire Wire Line
-	7600 2300 8050 2300
+	7600 2300 8000 2300
 Connection ~ 8000 2300
 Text Label 7600 2300 0    60   ~ 0
 MEAS
 $Comp
-L resistor R17
+L discrete:resistor R17
 U 1 1 59F720A8
 P 8050 2100
 F 0 "R17" H 8250 2200 60  0000 C CNN
-F 1 "resistor" H 8200 2000 60  0001 C CNN
+F 1 "200k" H 8200 2000 60  0001 C CNN
 F 2 "discrete_SMD:0402_R" H 8050 2100 60  0001 C CNN
 F 3 "" H 8050 2100 60  0000 C CNN
 	1    8050 2100
 	1    0    0    -1  
 $EndComp
 $Comp
-L resistor R18
+L discrete:resistor R18
 U 1 1 59F7216A
 P 8050 2300
 F 0 "R18" H 8250 2400 60  0000 C CNN
-F 1 "resistor" H 8200 2200 60  0001 C CNN
+F 1 "200k" H 8200 2200 60  0001 C CNN
 F 2 "discrete_SMD:0402_R" H 8050 2300 60  0001 C CNN
 F 3 "" H 8050 2300 60  0000 C CNN
 	1    8050 2300
@@ -702,13 +692,13 @@ Load output
 Text Label 8050 5350 0    60   ~ 0
 LOAD
 Wire Wire Line
-	8050 5350 8450 5350
+	8050 5350 8350 5350
 Text Label 6150 2650 2    60   ~ 0
 LOAD
 Wire Wire Line
 	6150 2650 5750 2650
 $Comp
-L MOSFET_P_DGS VT4
+L transistors:MOSFET_P_DGS VT4
 U 1 1 59F74F48
 P 8650 1600
 F 0 "VT4" V 8950 1850 60  0000 C CNN
@@ -723,7 +713,7 @@ Wire Wire Line
 Text Label 9600 1400 2    60   ~ 0
 BUZZER_PWR
 $Comp
-L resistor R10
+L discrete:resistor R10
 U 1 1 59F74FAD
 P 8050 1700
 F 0 "R10" H 8200 1800 60  0000 C CNN
@@ -746,7 +736,7 @@ Wire Wire Line
 Text Label 1200 3950 0    60   ~ 0
 BUZZER_PWR
 $Comp
-L zener D4
+L discrete:zener D4
 U 1 1 59F781B3
 P 9150 2100
 F 0 "D4" H 9300 2000 60  0000 C CNN
@@ -757,7 +747,7 @@ F 3 "" H 9200 1200 60  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L zener D5
+L discrete:zener D5
 U 1 1 59F78360
 P 9150 2300
 F 0 "D5" H 9300 2200 60  0000 C CNN
@@ -768,7 +758,7 @@ F 3 "" H 9200 1400 60  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR33
+L power1:GND #PWR33
 U 1 1 59F783E1
 P 9150 2100
 F 0 "#PWR33" H 9150 1950 50  0001 C CNN
@@ -779,7 +769,7 @@ F 3 "" H 9150 2100 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR34
+L power1:GND #PWR34
 U 1 1 59F78455
 P 9150 2300
 F 0 "#PWR34" H 9150 2150 50  0001 C CNN
@@ -792,7 +782,7 @@ $EndComp
 Wire Wire Line
 	9250 4300 9250 4000
 $Comp
-L PLS1 X2
+L connectors:PLS1 X2
 U 1 1 59F79F9E
 P 3300 4850
 F 0 "X2" H 3500 4950 60  0000 C CNN
@@ -803,7 +793,7 @@ F 3 "" H 3300 4850 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L resistor R5
+L discrete:resistor R5
 U 1 1 59F7AF2C
 P 2800 4850
 F 0 "R5" H 2950 4950 60  0000 C CNN
@@ -818,7 +808,7 @@ Wire Wire Line
 Wire Wire Line
 	3150 4850 3200 4850
 $Comp
-L TPL5010 U1
+L logic:TPL5010 U1
 U 1 1 59F7C19C
 P 1500 3200
 F 0 "U1" H 1650 3350 60  0000 C CNN
@@ -829,7 +819,7 @@ F 3 "" H 1500 3200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR4
+L power1:GND #PWR4
 U 1 1 59F7C3E5
 P 1500 3400
 F 0 "#PWR4" H 1500 3250 50  0001 C CNN
@@ -840,7 +830,7 @@ F 3 "" H 1500 3400 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L resistor R1
+L discrete:resistor R1
 U 1 1 59F7C465
 P 1150 3600
 F 0 "R1" H 1300 3700 60  0000 C CNN
@@ -851,7 +841,7 @@ F 3 "" H 1150 3600 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR1
+L power1:GND #PWR1
 U 1 1 59F7C53F
 P 1150 3600
 F 0 "#PWR1" H 1150 3450 50  0001 C CNN
@@ -862,7 +852,7 @@ F 3 "" H 1150 3600 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L 3V3 #PWR3
+L power1:3V3 #PWR3
 U 1 1 59F7C81A
 P 1500 3200
 F 0 "#PWR3" H 1500 3050 50  0001 C CNN
@@ -879,7 +869,7 @@ Wire Wire Line
 Wire Wire Line
 	2700 3600 2300 3600
 Wire Wire Line
-	4050 2850 4750 2850
+	4050 2850 4150 2850
 Text Label 2700 3200 2    60   ~ 0
 ~RST
 Text Label 2700 3400 2    60   ~ 0
@@ -887,7 +877,7 @@ WAKE
 Text Label 2700 3600 2    60   ~ 0
 MEAS
 $Comp
-L diode D3
+L discrete:diode D3
 U 1 1 59F71EBD
 P 7900 1700
 F 0 "D3" H 8050 1600 60  0000 C CNN
@@ -898,7 +888,7 @@ F 3 "" H 7950 800 60  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L diode D2
+L discrete:diode D2
 U 1 1 59F722C4
 P 7900 1500
 F 0 "D2" H 8050 1400 60  0000 C CNN
@@ -911,7 +901,7 @@ $EndComp
 Wire Wire Line
 	7900 1500 8000 1500
 Wire Wire Line
-	7900 1700 8050 1700
+	7900 1700 8000 1700
 Connection ~ 8000 1700
 Wire Wire Line
 	7200 1700 7600 1700
@@ -920,7 +910,7 @@ Wire Wire Line
 Text Label 7200 1700 0    60   ~ 0
 ~RST
 $Comp
-L resistor R9
+L discrete:resistor R9
 U 1 1 59F73878
 P 8050 1400
 F 0 "R9" H 8200 1500 60  0000 C CNN
@@ -936,11 +926,11 @@ Connection ~ 8000 1500
 Wire Wire Line
 	8400 1400 8550 1400
 Wire Wire Line
-	8000 1400 8000 1700
+	8000 1400 8000 1500
 Text Label 4350 2850 0    60   ~ 0
 ~CPU_RST
 $Comp
-L MOSFET_N_DGS VT1
+L transistors:MOSFET_N_DGS VT1
 U 1 1 59F7543B
 P 3950 3250
 F 0 "VT1" H 3900 3400 60  0000 C CNN
@@ -951,7 +941,7 @@ F 3 "" H 3950 3350 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR17
+L power1:GND #PWR17
 U 1 1 59F758C5
 P 4150 3350
 F 0 "#PWR17" H 4150 3200 50  0001 C CNN
@@ -962,7 +952,7 @@ F 3 "" H 4150 3350 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 3V3 #PWR16
+L power1:3V3 #PWR16
 U 1 1 59F75954
 P 4150 2400
 F 0 "#PWR16" H 4150 2250 50  0001 C CNN
@@ -973,7 +963,7 @@ F 3 "" H 4150 2400 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L resistor R8
+L discrete:resistor R8
 U 1 1 59F75BC7
 P 4150 2750
 F 0 "R8" V 4350 2600 60  0000 C CNN
@@ -984,10 +974,10 @@ F 3 "" H 4150 2750 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	4150 2750 4150 2950
+	4150 2750 4150 2850
 Connection ~ 4150 2850
 $Comp
-L diode D1
+L discrete:diode D1
 U 1 1 59F762EE
 P 4050 2850
 F 0 "D1" H 4200 2750 60  0000 C CNN
@@ -1006,7 +996,7 @@ Wire Wire Line
 Text Label 3300 3250 0    60   ~ 0
 WAKE
 $Comp
-L resistor R6
+L discrete:resistor R6
 U 1 1 59F77876
 P 3500 3250
 F 0 "R6" H 3650 3350 60  0000 C CNN
@@ -1047,7 +1037,7 @@ LED5
 Text Label 6150 2850 2    60   ~ 0
 LED6
 $Comp
-L PLS1 X11
+L connectors:PLS1 X11
 U 1 1 59F799D1
 P 6050 2450
 F 0 "X11" H 6250 2550 60  0000 C CNN
@@ -1058,7 +1048,7 @@ F 3 "" H 6050 2450 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PLS1 X10
+L connectors:PLS1 X10
 U 1 1 59F79ACD
 P 6050 2250
 F 0 "X10" H 6250 2350 60  0000 C CNN
@@ -1069,7 +1059,7 @@ F 3 "" H 6050 2250 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PLS1 X9
+L connectors:PLS1 X9
 U 1 1 59F79B78
 P 6050 2050
 F 0 "X9" H 6250 2150 60  0000 C CNN
@@ -1080,7 +1070,7 @@ F 3 "" H 6050 2050 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PLS1 X8
+L connectors:PLS1 X8
 U 1 1 59F79CA4
 P 6050 1850
 F 0 "X8" H 6250 1950 60  0000 C CNN
@@ -1091,7 +1081,7 @@ F 3 "" H 6050 1850 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR28
+L power1:GND #PWR28
 U 1 1 59F79D55
 P 5950 2050
 F 0 "#PWR28" H 5950 1900 50  0001 C CNN
@@ -1102,7 +1092,7 @@ F 3 "" H 5950 2050 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L 3V3 #PWR27
+L power1:3V3 #PWR27
 U 1 1 59F79F3A
 P 5950 1850
 F 0 "#PWR27" H 5950 1700 50  0001 C CNN
@@ -1117,7 +1107,7 @@ Wire Wire Line
 Wire Wire Line
 	5750 2450 5950 2450
 $Comp
-L 3V3 #PWR19
+L power1:3V3 #PWR19
 U 1 1 59F7A81E
 P 4750 3050
 F 0 "#PWR19" H 4750 2900 50  0001 C CNN
@@ -1128,7 +1118,7 @@ F 3 "" H 4750 3050 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L 3V3 #PWR25
+L power1:3V3 #PWR25
 U 1 1 59F7A965
 P 5750 3050
 F 0 "#PWR25" H 5750 2900 50  0001 C CNN
@@ -1139,7 +1129,7 @@ F 3 "" H 5750 3050 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR26
+L power1:GND #PWR26
 U 1 1 59F7AA09
 P 5750 3250
 F 0 "#PWR26" H 5750 3100 50  0001 C CNN
@@ -1150,7 +1140,7 @@ F 3 "" H 5750 3250 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR18
+L power1:GND #PWR18
 U 1 1 59F7AB79
 P 4750 2250
 F 0 "#PWR18" H 4750 2100 50  0001 C CNN
@@ -1161,7 +1151,7 @@ F 3 "" H 4750 2250 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L USB2_MICRO_B_F1 X1
+L connectors:USB2_MICRO_B_F1 X1
 U 1 1 59F7B26A
 P 1350 1250
 F 0 "X1" H 900 1500 60  0000 C CNN
@@ -1172,7 +1162,7 @@ F 3 "" H 1350 1250 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR5
+L power1:GND #PWR5
 U 1 1 59F7B5EF
 P 1550 2050
 F 0 "#PWR5" H 1550 1900 50  0001 C CNN
@@ -1185,7 +1175,7 @@ $EndComp
 Wire Wire Line
 	1450 1650 1550 1650
 Wire Wire Line
-	1550 1650 1550 2050
+	1550 1650 1550 1850
 Wire Wire Line
 	1450 1850 1550 1850
 Connection ~ 1550 1850
@@ -1197,7 +1187,7 @@ NoConn ~ 1450 1550
 NoConn ~ 1450 1450
 NoConn ~ 1450 1350
 $Comp
-L resistor R7
+L discrete:resistor R7
 U 1 1 59F7C9C7
 P 3600 1850
 F 0 "R7" H 3750 1950 60  0000 C CNN
@@ -1208,7 +1198,7 @@ F 3 "" H 3600 1850 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PLS1 X6
+L connectors:PLS1 X6
 U 1 1 59F7CAE6
 P 4050 1650
 F 0 "X6" H 4250 1750 60  0000 C CNN
@@ -1221,7 +1211,7 @@ $EndComp
 Wire Wire Line
 	3400 1650 3950 1650
 $Comp
-L PLS1 X7
+L connectors:PLS1 X7
 U 1 1 59F7D3DB
 P 4050 1850
 F 0 "X7" H 4250 1950 60  0000 C CNN
@@ -1233,7 +1223,7 @@ F 3 "" H 4050 1850 60  0000 C CNN
 $EndComp
 Connection ~ 3500 1850
 $Comp
-L PLS1 X12
+L connectors:PLS1 X12
 U 1 1 59F81823
 P 9650 4000
 F 0 "X12" H 9850 4100 60  0000 C CNN
@@ -1244,7 +1234,7 @@ F 3 "" H 9650 4000 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PLS1 X13
+L connectors:PLS1 X13
 U 1 1 59F81BC3
 P 9650 4200
 F 0 "X13" H 9850 4300 60  0000 C CNN
@@ -1255,7 +1245,7 @@ F 3 "" H 9650 4200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR37
+L power1:GND #PWR37
 U 1 1 59F81C86
 P 9550 4200
 F 0 "#PWR37" H 9550 4050 50  0001 C CNN
@@ -1266,7 +1256,7 @@ F 3 "" H 9550 4200 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L capacitor_el C6
+L discrete:capacitor_el C6
 U 1 1 59F71EA7
 P 5000 4650
 F 0 "C6" V 5050 4800 60  0000 C CNN
@@ -1277,7 +1267,7 @@ F 3 "" H 5000 4650 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L capacitor C7
+L discrete:capacitor C7
 U 1 1 59F71FB8
 P 5300 4950
 F 0 "C7" V 5550 4800 60  0000 C CNN
@@ -1288,7 +1278,7 @@ F 3 "" H 5300 4950 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR21
+L power1:GND #PWR21
 U 1 1 59F72CC2
 P 5000 4950
 F 0 "#PWR21" H 5000 4800 50  0001 C CNN
@@ -1299,7 +1289,7 @@ F 3 "" H 5000 4950 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR23
+L power1:GND #PWR23
 U 1 1 59F72D7E
 P 5300 4950
 F 0 "#PWR23" H 5300 4800 50  0001 C CNN
@@ -1310,7 +1300,7 @@ F 3 "" H 5300 4950 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 3V3 #PWR20
+L power1:3V3 #PWR20
 U 1 1 59F72F26
 P 5000 4650
 F 0 "#PWR20" H 5000 4500 50  0001 C CNN
@@ -1321,7 +1311,7 @@ F 3 "" H 5000 4650 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 3V3 #PWR22
+L power1:3V3 #PWR22
 U 1 1 59F73361
 P 5300 4650
 F 0 "#PWR22" H 5300 4500 50  0001 C CNN
@@ -1332,7 +1322,7 @@ F 3 "" H 5300 4650 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PLS1 X14
+L connectors:PLS1 X14
 U 1 1 59F74842
 P 10500 1200
 F 0 "X14" H 10700 1300 60  0000 C CNN
@@ -1343,7 +1333,7 @@ F 3 "" H 10500 1200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PLS1 X15
+L connectors:PLS1 X15
 U 1 1 59F74F2C
 P 10500 1600
 F 0 "X15" H 10700 1700 60  0000 C CNN
@@ -1362,7 +1352,7 @@ GUARD0
 Text Label 9950 1600 0    60   ~ 0
 GUARD1
 $Comp
-L PLS1 X16
+L connectors:PLS1 X16
 U 1 1 59F75654
 P 10500 1400
 F 0 "X16" H 10700 1500 60  0000 C CNN
@@ -1373,7 +1363,7 @@ F 3 "" H 10500 1400 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR38
+L power1:GND #PWR38
 U 1 1 59F7584B
 P 10400 1400
 F 0 "#PWR38" H 10400 1250 50  0001 C CNN
@@ -1384,7 +1374,7 @@ F 3 "" H 10400 1400 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L PLS1 X18
+L connectors:PLS1 X18
 U 1 1 59F79CCB
 P 5600 5850
 F 0 "X18" H 5800 5950 60  0000 C CNN
@@ -1395,7 +1385,7 @@ F 3 "" H 5600 5850 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PLS1 X19
+L connectors:PLS1 X19
 U 1 1 59F7A059
 P 5600 6050
 F 0 "X19" H 5800 6150 60  0000 C CNN
@@ -1406,7 +1396,7 @@ F 3 "" H 5600 6050 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PLS1 X20
+L connectors:PLS1 X20
 U 1 1 59F7A138
 P 5600 6250
 F 0 "X20" H 5800 6350 60  0000 C CNN
@@ -1417,7 +1407,7 @@ F 3 "" H 5600 6250 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PLS1 X21
+L connectors:PLS1 X21
 U 1 1 59F7A216
 P 5600 6450
 F 0 "X21" H 5800 6550 60  0000 C CNN
@@ -1428,7 +1418,7 @@ F 3 "" H 5600 6450 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PLS1 X22
+L connectors:PLS1 X22
 U 1 1 59F7A2F3
 P 5600 6650
 F 0 "X22" H 5800 6750 60  0000 C CNN
@@ -1439,7 +1429,7 @@ F 3 "" H 5600 6650 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PLS1 X23
+L connectors:PLS1 X23
 U 1 1 59F7A3D3
 P 5600 6850
 F 0 "X23" H 5800 6950 60  0000 C CNN
@@ -1450,7 +1440,7 @@ F 3 "" H 5600 6850 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PLS1 X24
+L connectors:PLS1 X24
 U 1 1 59F7A4B6
 P 5600 7050
 F 0 "X24" H 5800 7150 60  0000 C CNN
@@ -1461,7 +1451,7 @@ F 3 "" H 5600 7050 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PLS1 X25
+L connectors:PLS1 X25
 U 1 1 59F7A6A6
 P 5600 7250
 F 0 "X25" H 5800 7350 60  0000 C CNN
@@ -1472,7 +1462,7 @@ F 3 "" H 5600 7250 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L resistor R21
+L discrete:resistor R21
 U 1 1 59F7AE5B
 P 5150 5850
 F 0 "R21" H 5350 5950 60  0000 C CNN
@@ -1483,7 +1473,7 @@ F 3 "" H 5150 5850 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L resistor R22
+L discrete:resistor R22
 U 1 1 59F7B36D
 P 5150 6050
 F 0 "R22" H 5350 6150 60  0000 C CNN
@@ -1494,7 +1484,7 @@ F 3 "" H 5150 6050 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L resistor R23
+L discrete:resistor R23
 U 1 1 59F7B45C
 P 5150 6250
 F 0 "R23" H 5350 6350 60  0000 C CNN
@@ -1505,7 +1495,7 @@ F 3 "" H 5150 6250 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L resistor R24
+L discrete:resistor R24
 U 1 1 59F7B54E
 P 5150 6450
 F 0 "R24" H 5350 6550 60  0000 C CNN
@@ -1516,7 +1506,7 @@ F 3 "" H 5150 6450 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L resistor R25
+L discrete:resistor R25
 U 1 1 59F7B643
 P 5150 6650
 F 0 "R25" H 5350 6750 60  0000 C CNN
@@ -1527,7 +1517,7 @@ F 3 "" H 5150 6650 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L resistor R26
+L discrete:resistor R26
 U 1 1 59F7B73B
 P 5150 6850
 F 0 "R26" H 5350 6950 60  0000 C CNN
@@ -1538,7 +1528,7 @@ F 3 "" H 5150 6850 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L resistor R27
+L discrete:resistor R27
 U 1 1 59F7B836
 P 5150 7050
 F 0 "R27" H 5350 7150 60  0000 C CNN
@@ -1577,7 +1567,7 @@ LED6
 Wire Wire Line
 	4850 7050 5150 7050
 $Comp
-L GND #PWR24
+L power1:GND #PWR24
 U 1 1 59F7CF56
 P 5500 7250
 F 0 "#PWR24" H 5500 7100 50  0001 C CNN
@@ -1588,7 +1578,7 @@ F 3 "" H 5500 7250 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR30
+L power1:GND #PWR30
 U 1 1 59F780D8
 P 8350 5800
 F 0 "#PWR30" H 8350 5650 50  0001 C CNN
@@ -1602,7 +1592,7 @@ Wire Wire Line
 	8350 5450 8350 5350
 Connection ~ 8350 5350
 $Comp
-L resistor R11
+L discrete:resistor R11
 U 1 1 59F79213
 P 7900 3600
 F 0 "R11" H 8100 3500 60  0000 C CNN
@@ -1613,7 +1603,7 @@ F 3 "" H 7900 3600 60  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR29
+L power1:GND #PWR29
 U 1 1 59F799C8
 P 7550 3600
 F 0 "#PWR29" H 7550 3450 50  0001 C CNN
@@ -1627,7 +1617,7 @@ Connection ~ 8000 3600
 Wire Wire Line
 	8050 2100 8000 2100
 $Comp
-L LOGO LG?1
+L LOGO:LOGO LG?1
 U 1 1 59F829FA
 P 7300 6900
 F 0 "LG?1" H 7315 6650 60  0001 C CNN
@@ -1644,7 +1634,7 @@ SWCLK
 Text Label 5750 2450 0    60   ~ 0
 SWDIO
 $Comp
-L resistor R28
+L discrete:resistor R28
 U 1 1 59FAE909
 P 8450 4500
 F 0 "R28" V 8600 4350 60  0000 C CNN
@@ -1657,4 +1647,62 @@ $EndComp
 Wire Wire Line
 	8450 4850 8450 4950
 Connection ~ 8450 4300
+Wire Wire Line
+	8650 3200 8650 3300
+Wire Wire Line
+	9150 3200 9150 3300
+Wire Wire Line
+	2150 2200 2400 2200
+Wire Wire Line
+	3500 2200 3600 2200
+Wire Wire Line
+	1950 2200 1950 2250
+Wire Wire Line
+	3500 1250 3950 1250
+Wire Wire Line
+	1200 4850 1200 5150
+Wire Wire Line
+	1200 4400 1200 4450
+Wire Wire Line
+	1500 4650 1500 3950
+Wire Wire Line
+	1200 5150 1200 5250
+Wire Wire Line
+	8650 4950 8650 5050
+Wire Wire Line
+	8650 4950 8850 4950
+Wire Wire Line
+	8650 2650 8950 2650
+Wire Wire Line
+	9350 3200 9650 3200
+Wire Wire Line
+	8450 4000 8550 4000
+Wire Wire Line
+	9250 4000 9550 4000
+Wire Wire Line
+	8000 2300 8000 3600
+Wire Wire Line
+	8000 2300 8050 2300
+Wire Wire Line
+	8000 1700 8050 1700
+Wire Wire Line
+	8000 1500 8000 1700
+Wire Wire Line
+	4150 2850 4750 2850
+Wire Wire Line
+	4150 2850 4150 2950
+Wire Wire Line
+	1550 1850 1550 1950
+Wire Wire Line
+	1550 1950 1550 2050
+Wire Wire Line
+	1900 1250 2600 1250
+Wire Wire Line
+	3500 1850 3600 1850
+Wire Wire Line
+	8350 5350 8450 5350
+Wire Wire Line
+	8000 3600 8100 3600
+Wire Wire Line
+	8450 4300 8450 4500
 $EndSCHEMATC
